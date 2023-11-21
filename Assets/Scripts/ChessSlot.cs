@@ -43,7 +43,7 @@ public class ChessSlot : MonoBehaviour,IDropHandler
         }
         else if (dragSystem.chessWare == Shape.Knight)
         {
-            if ((Mathf.Abs((int)movePos.x) == 10 && Mathf.Abs((int)movePos.y) <= 5) || (Mathf.Abs((int)movePos.x) == 5 && Mathf.Abs((int)movePos.y) == 10))
+            if ((Mathf.Abs((int)movePos.x) == 10 && Mathf.Abs((int)movePos.y) == 5) || (Mathf.Abs((int)movePos.x) == 5 && Mathf.Abs((int)movePos.y) == 10))
             {
                 if (transform.childCount == 0)
                 {

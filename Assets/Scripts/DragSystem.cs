@@ -38,7 +38,7 @@ public class DragSystem : MonoBehaviour,IDragHandler,IBeginDragHandler,IEndDragH
         else
         {
             if (eventData.pointerDrag.tag == "Player2")
-            {
+            { 
                 startPos = eventData.pointerDrag.transform;
                 parentAfterDrag = transform.parent;
                 transform.SetParent(transform.root);
