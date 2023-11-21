@@ -33,7 +33,6 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        GameObject.FindGameObjectsWithTag("Player");
-        GameObject.FindGameObjectsWithTag("Player2");
+      
     }
 }
