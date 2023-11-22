@@ -7,8 +7,8 @@ using UnityEngine.UI;
 public class DragSystem : MonoBehaviour,IDragHandler,IBeginDragHandler,IEndDragHandler
 {
     public Image iamge;
-    public Transform startPos;
-    public Transform endPos;
+    public Vector2 startPos;
+    public Vector2 endPos;
     [HideInInspector]
     public Transform parentAfterDrag;
     private GameManager gm;
@@ -28,7 +28,7 @@ public class DragSystem : MonoBehaviour,IDragHandler,IBeginDragHandler,IEndDragH
         {
             if (eventData.pointerDrag.tag == "Player")
             {
-                startPos = eventData.pointerDrag.transform;
+                startPos = eventData.pointerDrag.transform.position;
                 parentAfterDrag = transform.parent;
                 transform.SetParent(transform.root);
                 transform.SetAsLastSibling();
@@ -39,7 +39,7 @@ public class DragSystem : MonoBehaviour,IDragHandler,IBeginDragHandler,IEndDragH
         {
             if (eventData.pointerDrag.tag == "Player2")
             { 
-                startPos = eventData.pointerDrag.transform;
+                startPos = eventData.pointerDrag.transform.position;
                 parentAfterDrag = transform.parent;
                 transform.SetParent(transform.root);
                 transform.SetAsLastSibling();

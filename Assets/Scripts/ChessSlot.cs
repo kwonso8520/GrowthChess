@@ -14,11 +14,11 @@ public class ChessSlot : MonoBehaviour,IDropHandler
     {
         GameObject dropped = eventData.pointerDrag;
         DragSystem dragSystem = dropped.GetComponent<DragSystem>();
-        dragSystem.endPos = transform;
-        Vector2 movePos = dragSystem.endPos.position - dragSystem.startPos.position;
+        dragSystem.endPos = transform.position;
+        Vector2 movePos = dragSystem.endPos - dragSystem.startPos;
         if (dragSystem.chessWare == Shape.King)
         {
-            if (Mathf.Abs((int)movePos.x) + Mathf.Abs((int)movePos.y) <= gm.n * 5)
+            if (Mathf.Abs((int)movePos.x) + Mathf.Abs((int)movePos.y) == gm.n * 135)
             {
                 if (transform.childCount == 0)
                 {
@@ -43,7 +43,7 @@ public class ChessSlot : MonoBehaviour,IDropHandler
         }
         else if (dragSystem.chessWare == Shape.Knight)
         {
-            if ((Mathf.Abs((int)movePos.x) == 10 && Mathf.Abs((int)movePos.y) == 5) || (Mathf.Abs((int)movePos.x) == 5 && Mathf.Abs((int)movePos.y) == 10))
+            if ((Mathf.Abs((int)movePos.x) == 270 && Mathf.Abs((int)movePos.y) == 135) || (Mathf.Abs((int)movePos.x) == 135 && Mathf.Abs((int)movePos.y) == 270))
             {
                 if (transform.childCount == 0)
                 {
